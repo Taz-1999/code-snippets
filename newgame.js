@@ -53,13 +53,26 @@ function ShuffleDeck() {
     });
 }
 
-  // Draw 4 cards, add to dealer and player piles.
+// Draw 4 cards, add to dealer and player piles.
 async function deal4(deck_id) {
-  card = await GetACard(deck_id);
-  console.log("Player Card 1: " + card);
+  await GetACard(deck_id);
+  player_card_1 = card;
+  console.log("Player Card 1: " + player_card_1);
+
+  await GetACard(deck_id);
+  dealer_card_1 = card;
+  console.log("Dealer Card 1: " + dealer_card_1);
+
+  await GetACard(deck_id);
+  player_card_2 = card;
+  console.log("Player Card 2: " + player_card_2);
+
+  await GetACard(deck_id);
+  dealer_card_2 = card;
+  console.log("Dealer Card 1: " + dealer_card_2);
 }
 
-function GetACard(deck_id) {
+async function GetACard(deck_id) {
   // Skapa variabeln som kommer innehålla url'en till kortet.
   let cardImageURL = "";
 
@@ -67,7 +80,7 @@ function GetACard(deck_id) {
 
   // Hämta ett JSON-objekt med ett kort och gör olika saker om det går bra eller inte.
 
-  fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=1`)
+  await fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=1`)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not OK");
@@ -92,7 +105,6 @@ function GetACard(deck_id) {
       );
 
       return card;
-
     })
 
     .catch((error) => {
