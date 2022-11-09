@@ -54,7 +54,11 @@ function ShuffleDeck() {
 }
 
 // Draw 4 cards, add to dealer and player piles.
+// Async före funktionen här gör att await inuti fungerar.
 async function deal4(deck_id) {
+  // Await före varje GetACard här plus await på fetchen inuti GetACard gör
+  // hela skillnaden.
+
   await GetACard(deck_id);
   player_card_1 = card;
   console.log("Player Card 1: " + player_card_1);
@@ -72,6 +76,7 @@ async function deal4(deck_id) {
   console.log("Dealer Card 1: " + dealer_card_2);
 }
 
+// async före funktionen här betyder att await inuti den fungerar.
 async function GetACard(deck_id) {
   // Skapa variabeln som kommer innehålla url'en till kortet.
   let cardImageURL = "";
@@ -80,6 +85,7 @@ async function GetACard(deck_id) {
 
   // Hämta ett JSON-objekt med ett kort och gör olika saker om det går bra eller inte.
 
+  // En await före fetch här gjorde susen. Annars fungerar det inte.
   await fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=1`)
     .then((response) => {
       if (!response.ok) {
