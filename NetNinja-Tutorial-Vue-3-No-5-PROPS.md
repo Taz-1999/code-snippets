@@ -45,13 +45,13 @@ Vad det gör är att man knyter en prop till ett uttryck (som kan vara bool, sif
 
 Skrivs så: 
 
-<Modal v-bind:header="['shaun', 4, true]">
+    < Modal v-bind:header="['shaun', 4, true]" >
 
 Detta knyter ihop "header" med detta värde. Det innanför "" utvärderas och är en array i detta fall.
 
 Eller med Shorthand: 
 
-<Modal :header="['shaun', 4, true]">
+    < Modal :header="['shaun', 4, true]" >
 
 Man kan OCKSÅ innanför "" ange namnet på en variabel man sätter i ett data-objekt så, här sätts några variabler:
 
@@ -70,7 +70,7 @@ Man kan OCKSÅ innanför "" ange namnet på en variabel man sätter i ett data-o
 
 Att skicka title, header och text från App.vue till Modal.vue görs så:
 
-<Modal :title="title" :header="header" :text="text">
+    < Modal :title="title" :header="header" :text="text" >
 
 Dvs :title är en prop och title är namnet på variablen, där värdet kommer från script > export default > data () {}. 
 Ref om data: https://vuejs.org/api/options-state.html#data
