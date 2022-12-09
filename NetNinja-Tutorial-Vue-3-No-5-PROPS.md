@@ -8,7 +8,7 @@ https://youtu.be/KM1U6DqZf8M?list=PL4cUxeGkcC9hYYGbV60Vq3IXYNfDk8At1&t=375
     https://github.com/iamshaunjp/Vue-3-Firebase/tree/lesson-25
 
 
-Går att skicka props från föräldrer till barn->komponent. Dvs från App.vue -> Modal.vue. Props är namn/värde-par.
+Det går att skicka props från föräldrer till barn->komponent. Dvs från App.vue -> Modal.vue. Props är namn/värde-par.
 
 Man bör/skall skapa props på ETT ställe. 
 
@@ -16,7 +16,7 @@ I App.vue används <Modal XXXXX > på ett ställe där komponenten skall in. Inu
 
 Man sätter en prop så:
 
-<Modal header="My header text" >
+    < Modal header="My header text" >
 
 I Modal.vue så skapar man ett script > export defaults > props så och namnger SAMMA prop omgiven med '' (fnuttar).
 
@@ -30,7 +30,6 @@ Man behöver deklarera på detta vis de props som finns.
 
 NU vet denna modul att från App.vue kommer det en prop som heter Header med ett strängvärde i. Det kan jag nu använda med {{ header }} inuti 
 <template>-taggen i Modal.vue.
-
 
 Man kan skapa ett gäng props inuti <Modal propname="propvalue", propname2="propvalue2">
 
@@ -73,4 +72,5 @@ Att skicka title, header och text från App.vue till Modal.vue görs så:
     < Modal :title="title" :header="header" :text="text" >
 
 Dvs :title är en prop och title är namnet på variablen, där värdet kommer från script > export default > data () {}. 
+
 Ref om data: https://vuejs.org/api/options-state.html#data
