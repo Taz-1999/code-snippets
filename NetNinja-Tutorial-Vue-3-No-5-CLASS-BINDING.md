@@ -9,11 +9,11 @@ https://github.com/iamshaunjp/Vue-3-Firebase/tree/lesson-25
 
 I App.vue så skickar vi även med namn/värde-par: theme="sale"
 
-  <Modal v-bind:header="header" :text="text" theme="sale"/>
+  < Modal v-bind:header="header" :text="text" theme="sale"/>
 
 I Modal.vue så innehåller <template> nu: 
 
-  <div class="modal" :class="{ sale: theme === 'sale' }">
+  < div class="modal" :class="{ sale: theme === 'sale' }">
 
 **Förklaring**
 
@@ -21,7 +21,7 @@ v-bind: har en special/shorthand för class binding, dvs "v-bind:class" skrivs "
 
 Det likställs med ett uttryck och det uttrycket är <plain-old-javascript!>
 
-  <div :class="{ red: isRed }"></div>
+  < div :class="{ red: isRed }"></div>
 
 Detta **red: isRed** är ett vanligt namn/värde-par. Red är namn, isRed är en variabel som ger ett värde till red. 
 
@@ -48,4 +48,4 @@ Så, detta **:class="{ sale: theme === 'sale' }"** betyder, är sale: true/false
 
 Eller kortare: Om **theme = 'sale'**, addera **class="sale"** till denna div, så:
 
-<div class="modal sale"> 
+  < div class="modal sale"> 
